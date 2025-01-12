@@ -1,5 +1,5 @@
 
 
 module.exports.indexController = (req,res,next)=>{
-    res.send("the is working all fine")
+   res.status(200).json({message:"Hello world"})
 }

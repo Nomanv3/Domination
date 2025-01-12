@@ -25,5 +25,5 @@ app.use('/product' , productRouter)
 
 app.listen(4000 , (err)=>{
     if(err) return console.log(err.message)
-        return console.log("connected to server")
+        return console.log("connected to server 3000")
 })
