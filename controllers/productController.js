@@ -3,7 +3,7 @@ const sharp = require("sharp");
 
 
 module.exports.productController = async (req,res)=>{
-    let {name , description , price } = req.body  
+    let {name , description , amount } = req.body  
     try {
         
         if (!req.files || req.files.length === 0) {
@@ -23,7 +23,7 @@ module.exports.productController = async (req,res)=>{
 
         console.log(resizedBuffers )
 
-        if(!name && !description && !price){
+        if(!name && !description && !amount){
             return res.status(400).json({
                 message:"All feilds are required"
             })
@@ -32,7 +32,7 @@ module.exports.productController = async (req,res)=>{
         const product = await productModel.create({
               name , 
               description,
-              price,
+              amount,
               image:resizedBuffers,
               seller:req.user._id
         })
